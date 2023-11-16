@@ -44,16 +44,16 @@ public class App
 
         display( list2 );  // pass a reference of type LinkedList
 
+        int sum = sumValues(list1);
+
+
         // 2DO (Part A)
         // Look up the Stack class in the Java API
         // Create a Stack data structure, push() four Integer values onto the stack.
         // Call the display() method to display the list of elements in the stack.
 
-
-
         // Note that the display() method will 'see' the stack object only
         // as a List, and can only perform List operations on the stack.
-
     }
 
     /**
@@ -67,26 +67,25 @@ public class App
     public static void display( List<Integer> list )  // reference type is "List"
     {
         System.out.print("List: ");
-
         ListIterator<Integer> iterator = list.listIterator();
-
-        while( iterator.hasNext()  )
-        {
+        while( iterator.hasNext()  ) {
             System.out.print(iterator.next()+","); // get next value, and move iterator forward
         }
-
         System.out.println("");
     }
 
-    // 2DO (Part B)
-  /*
-    Write a method removeNthElement() that removes the Nth element from a List.
-    e.g. removeNthElement(list,2) -  removes the second element in the list.
-    Test the method on the ArrayList, the LinkedLIst and the Stack objects.
-  */
+    /**
+     *
+     * @param list - uses the interface type List as the parameter type
+     *             - this will accept any list that implements the List interface
+     *             - such as ArrayList and LinkedList
+     * @return
+     */
+    public static int sumValues( List<Integer> list) {
+        int sum = 0;
+        for( Integer val : list)
+            sum = sum + val;
 
-    //  public static void removeNthElement(  ?? )){
-    //
-    // }
-
+        return sum;
+    }
 }
